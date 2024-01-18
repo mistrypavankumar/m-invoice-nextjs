@@ -11,6 +11,8 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleLogin = () => {};
+
   return (
     <>
       {loading ? (
@@ -21,26 +23,30 @@ const Login = () => {
             <div className=" w-full flex align-center justify-center">
               <form
                 className="w-[90%] md:w-[35%] px-4 pt-10 pb-5 mx-auto shadow-md h-auto rounded-md"
-                // onSubmit={loginSubmit}
+                onSubmit={handleLogin}
               >
                 <h1 className="text-2xl mb-10 font-bold text-primaryDarkBlue">
                   Login
                 </h1>
                 <AnimatedFormField
                   value={email}
-                  setOnChangeValue={() => {}}
+                  setOnChangeValue={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   inputType="email"
                   labelName="Email"
                 />
                 <AnimatedFormField
                   value={password}
-                  setOnChangeValue={() => {}}
+                  setOnChangeValue={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   inputType="password"
                   labelName="Password"
                 />
 
                 <p className="text-green-500">
-                  <Link href="/forgotpassword">Forgot Password ?</Link>
+                  <Link href="/forgot-password">Forgot Password ?</Link>
                 </p>
 
                 <input
@@ -50,7 +56,7 @@ const Login = () => {
                 />
 
                 <p className="text-slate-600 flex mt-5">
-                  New to MG-Invoice ?
+                  New to M-Invoice ?
                   <span className="text-green-500 underline ml-2 block cursor-pointer">
                     {" "}
                     <Link href="/register">Sign Up</Link>

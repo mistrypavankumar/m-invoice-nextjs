@@ -5,7 +5,7 @@ type AnimatedFormFieldProps = {
   inputType: string;
   labelName: string;
   autoComplete?: string;
-  setOnChangeValue: () => void;
+  setOnChangeValue: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
 };
 

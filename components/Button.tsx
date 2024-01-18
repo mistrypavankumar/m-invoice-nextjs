@@ -3,7 +3,7 @@ import React from "react";
 type ButtonProps = {
   label: string;
   btnType?: string;
-  onClick: () => void;
+  onClick: (event?: React.ChangeEvent<HTMLInputElement>) => void;
   btnWidth?: number;
   customeStyle?: string;
 };
