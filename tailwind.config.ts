@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,6 +18,37 @@ const config = {
       },
     },
     extend: {
+      backgroundColor: {
+        secColor: "#efefef",
+        mainColor: "#BEBEBE",
+        // mainColor: "#1A1B1F",
+        primaryBlue: "#022f47",
+        primaryDarkBlue: "#021e34",
+        secondaryColor: "#14cddb",
+        secondaryDark: "#0e8f99",
+        blackOverlay: "rgba(0, 0 ,0 ,0.7)",
+      },
+      borderWidth: {
+        3: "3px",
+      },
+
+      borderColor: {
+        primaryBlue: "#022f47",
+        primaryDarkBlue: "#021e34",
+        secondaryColor: "#14cddb",
+        secondaryDark: "#0e8f99",
+      },
+
+      textColor: {
+        lightGray: "#F1EFEE",
+        primaryBlue: "#14cddb",
+        secondaryDark: "#0e8f99",
+        mainColor: "#1A1B1F",
+        primaryDarkBlue: "#021e34",
+        secColor: "#efefef",
+        navColor: "#BEBEBE",
+      },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -75,6 +106,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

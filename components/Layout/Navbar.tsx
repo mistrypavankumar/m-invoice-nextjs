@@ -7,6 +7,7 @@ import CustomeNavLink from "./CustomeNavLink";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from "../Button";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const router = useRouter();
@@ -22,7 +23,7 @@ const Navbar = () => {
           className="font-bold text-base sm:text-xl md:text-2xl text-primaryDarkBlue"
           href="/"
         >
-          <span className="text-green-500">MG</span>-INVOICE
+          <span className="text-green-500">M</span>-INVOICE
         </Link>
       </div>
 
@@ -36,7 +37,7 @@ const Navbar = () => {
       </div>
 
       {/* right side */}
-      <div className="flex justify-end w-1/2 xl:w-1/2">
+      <div className="flex justify-end w-1/2">
         {isAuthenticated ? (
           <Button
             label="Dashboard"
@@ -48,7 +49,7 @@ const Navbar = () => {
             }}
           />
         ) : (
-          <>
+          <div className="space-x-3 hidden md:block">
             <Button
               label="Login"
               btnType="outline"
@@ -65,9 +66,10 @@ const Navbar = () => {
                 router.push("/register");
               }}
             />
-          </>
+          </div>
         )}
       </div>
+      <Menu className="md:hidden block" />
     </div>
   );
 };
