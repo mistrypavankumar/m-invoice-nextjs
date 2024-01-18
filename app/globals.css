@@ -74,3 +74,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .scaleHoverEffect {
+    @apply hover:scale-105 transition-all duration-300 hover:shadow-md;
+  }
+
+  .scaleable-btn {
+    @apply bg-primaryDarkBlue text-white px-3 py-1.5 rounded-md block ml-auto hover:bg-transparent hover:text-primaryDarkBlue border-2 border-primaryDarkBlue transition-all duration-300 hover:cursor-pointer hover:shadow-md;
+  }
+}
