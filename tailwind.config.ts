@@ -38,6 +38,7 @@ const config = {
         secondaryColor: "#14cddb",
         secondaryDark: "#0e8f99",
       },
+
       textColor: {
         lightGray: "#F1EFEE",
         primaryBlue: "#14cddb",
@@ -47,6 +48,7 @@ const config = {
         secColor: "#efefef",
         navColor: "#BEBEBE",
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
