@@ -1,11 +1,12 @@
-import { CreateUserParams } from "@/types";
-import axios from "axios";
+import jwt from "jsonwebtoken";
 
-export const createUser = async (user: CreateUserParams) => {
+const JWT_SECRET = process.env.JWT_SECRET;
+
+export function verifyAuthToken({ token }: { token: string }) {
   try {
-    const res = await axios.post("/api/v1/auth/register", user);
-    return JSON.parse(JSON.stringify(res));
-  } catch (err) {
-    console.log(err);
+    const decoded = jwt.verify(token, JWT_SECRET!);
+    return decoded;
+  } catch (error) {
+    throw new Error("Invalid or expired token");
   }
-};
+}

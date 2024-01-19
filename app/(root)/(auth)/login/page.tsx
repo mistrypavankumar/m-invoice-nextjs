@@ -1,17 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useReducer, useState } from "react";
 
 import Loader from "@/components/Loader/Loader";
 import AnimatedFormField from "@/components/login/AnimatedFormField";
 import Link from "next/link";
+import axios from "axios";
+
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const loading = false;
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {};
+  const handleLogin = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const loginCredential = {
+      email,
+      password,
+    };
+
+    try {
+      const response = await axios.post("/api/v1/auth/login", loginCredential);
+
+      if (response.status === 200) {
+        router.push(`/dashboard/${response.data.user._id}`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <>
